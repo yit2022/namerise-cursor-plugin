@@ -1,0 +1,11 @@
+{
+  "name": "namerise",
+  "owner": { "name": "Tamalaki Business Network Ltd", "email": "support@namerise.app" },
+  "plugins": [
+    {
+      "name": "namerise-certificate-check",
+      "source": "./",
+      "description": "Read-only check of a NameRise Namesake Clearance Certificate by ID. Not government-ID verification."
+    }
+  ]
+}

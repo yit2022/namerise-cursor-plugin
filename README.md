@@ -33,7 +33,16 @@ Each successful or failed check that reaches NameRise is logged against your key
 
 Install from the Cursor Marketplace, then set the plugin variable `NAMERISE_API_KEY` in the Cursor dashboard under Plugins. The key is never stored in this repository.
 
-### B. Local install from a clone (works today)
+### B. Claude Code plugin
+
+```text
+/plugin marketplace add yit2022/namerise-cursor-plugin
+/plugin install namerise-certificate-check@namerise
+```
+
+Export `NAMERISE_API_KEY` in the environment Claude Code starts from. The plugin runs the same bundled server (`.mcp.json`). Not yet tested end to end in Claude Code; please report problems.
+
+### C. Local install from a clone (Cursor, works today)
 
 ```bash
 git clone <this-repo-url> namerise-cursor-plugin
@@ -95,6 +104,10 @@ npm run check     # tsc, vitest (mocked), esbuild bundle
 ```
 
 Tests use mocked HTTP. They cover success, invalid IDs, missing key, 401, 403, 404, 429, timeouts, retries, redirects, malformed and oversized responses, MCP initialise/list/call, and the built bundle over stdio. Live verification against the real API needs a real key and a real certificate ID and is not part of the test suite.
+
+## Status
+
+Version 0.1.0. Tested with mocked HTTP, an in-memory MCP client, the MCP Inspector and the built bundle over stdio. A live call against the real NameRise API has not been run yet.
 
 ## Licence
 

@@ -1,0 +1,11 @@
+{
+  "mcpServers": {
+    "namerise-certificate-check": {
+      "command": "node",
+      "args": ["${CLAUDE_PLUGIN_ROOT}/server/dist/index.js"],
+      "env": {
+        "NAMERISE_API_KEY": "${NAMERISE_API_KEY}"
+      }
+    }
+  }
+}
