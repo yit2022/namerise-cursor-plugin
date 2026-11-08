@@ -1,0 +1,14 @@
+{
+  "$schema": "https://static.modelcontextprotocol.io/schemas/2025-12-11/server.schema.json",
+  "name": "io.github.yit2022/namerise-certificate-check",
+  "description": "Read-only check of a NameRise Namesake Clearance Certificate by ID.",
+  "repository": {"url": "https://github.com/yit2022/namerise-cursor-plugin", "source": "github"},
+  "version": "0.1.0",
+  "packages": [{
+    "registryType": "npm",
+    "identifier": "namerise-certificate-check-mcp",
+    "version": "0.1.0",
+    "transport": {"type": "stdio"},
+    "environmentVariables": [{"name": "NAMERISE_API_KEY", "description": "NameRise API key (nrk_live_...)", "isRequired": true, "isSecret": true}]
+  }]
+}

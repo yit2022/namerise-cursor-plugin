@@ -2,15 +2,17 @@
   "name": "namerise-certificate-check-mcp",
   "version": "0.1.0",
   "description": "Read-only MCP server for the NameRise Certificate Check API",
-  "private": true,
   "type": "module",
   "license": "MIT",
-  "engines": { "node": ">=20" },
+  "engines": {
+    "node": ">=20"
+  },
   "scripts": {
     "typecheck": "tsc --noEmit",
     "test": "vitest run",
-    "build": "esbuild src/index.ts --bundle --platform=node --format=esm --target=node20 --outfile=dist/index.js --banner:js=\"import{createRequire as __cr}from 'node:module';const require=__cr(import.meta.url);\"",
-    "check": "npm run typecheck && npm test && npm run build"
+    "build": "esbuild src/index.ts --bundle --platform=node --format=esm --target=node20 --outfile=dist/index.js --banner:js=\"#!/usr/bin/env node\nimport{createRequire as __cr}from 'node:module';const require=__cr(import.meta.url);\"",
+    "check": "npm run typecheck && npm test && npm run build",
+    "prepublishOnly": "npm run check"
   },
   "dependencies": {
     "@modelcontextprotocol/sdk": "1.32.2",
@@ -21,5 +23,27 @@
     "esbuild": "0.28.2",
     "typescript": "7.0.2",
     "vitest": "5.1.0"
-  }
+  },
+  "mcpName": "io.github.yit2022/namerise-certificate-check",
+  "bin": {
+    "namerise-certificate-check-mcp": "dist/index.js"
+  },
+  "files": [
+    "dist/index.js",
+    "README.md",
+    "LICENSE"
+  ],
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/yit2022/namerise-cursor-plugin.git",
+    "directory": "server"
+  },
+  "homepage": "https://namerise.app/developers",
+  "author": "Tamalaki Business Network Ltd <support@namerise.app>",
+  "keywords": [
+    "mcp",
+    "namerise",
+    "certificate",
+    "verification"
+  ]
 }
