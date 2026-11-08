@@ -1,0 +1,12 @@
+{
+  "mcpServers": {
+    "namerise-certificate-check": {
+      "type": "stdio",
+      "command": "node",
+      "args": ["/ABSOLUTE/PATH/TO/namerise-cursor-plugin/server/dist/index.js"],
+      "env": {
+        "NAMERISE_API_KEY": "${env:NAMERISE_API_KEY}"
+      }
+    }
+  }
+}

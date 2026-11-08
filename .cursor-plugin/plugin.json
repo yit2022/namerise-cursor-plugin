@@ -1,0 +1,20 @@
+{
+  "name": "namerise-certificate-check",
+  "version": "0.1.0",
+  "description": "Read-only check of a NameRise Namesake Clearance Certificate by ID: status, the subject's self-declared statement, sources and accounts, and record-chain integrity. Not government-ID verification.",
+  "author": { "name": "Tamalaki Business Network Ltd", "email": "support@namerise.app" },
+  "homepage": "https://namerise.app/developers",
+  "license": "MIT",
+  "keywords": ["namerise", "certificate", "kyc", "due-diligence", "compliance", "mcp"],
+  "mcpServers": "mcp.json",
+  "variables": {
+    "type": "object",
+    "properties": {
+      "NAMERISE_API_KEY": {
+        "type": "string",
+        "description": "NameRise Certificate Check API key (nrk_live_...). Request one from support@namerise.app."
+      }
+    },
+    "required": ["NAMERISE_API_KEY"]
+  }
+}
